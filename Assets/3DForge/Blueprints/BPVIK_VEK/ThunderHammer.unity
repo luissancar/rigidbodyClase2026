@@ -886,9 +886,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InstanciarBombas
   prefabBomba: {fileID: 7158968591349409017, guid: 91f937a22d697f040bf1dc0beb85fd08, type: 3}
   player: {fileID: 543450653585223548}
-  distanciaMax: 2
+  distanciaMax: 1
   altura: 20
-  intervalo: 2
+  intervalo: 1
   playerMovement: {fileID: 1479439178}
 --- !u!4 &414772086
 Transform:

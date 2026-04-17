@@ -21,8 +21,8 @@ public class InstanciarBombas : MonoBehaviour
     {
         while (true)
         {
-            //if (playerMovement.muerto)
-            //  break;
+            if (playerMovement.muerto)
+              break;
 
             Vector2 direccion2D = Random.insideUnitCircle.normalized;
             Vector3 direccion = new Vector3(direccion2D.y, 0, distanciaMax);
@@ -30,7 +30,8 @@ public class InstanciarBombas : MonoBehaviour
             Vector3 posicionSpawn = player.position + direccion * distancia;
             posicionSpawn.y = altura;
 
-            Instantiate(prefabBomba, posicionSpawn, Quaternion.identity);
+
+            Instantiate(prefabBomba, posicionSpawn, Quaternion.Euler(180f, 0f, 0f));
             yield return new WaitForSeconds(intervalo);
         }
     }

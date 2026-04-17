@@ -28,6 +28,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     private bool canMove = true;
 
+    public bool muerto=false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -126,6 +128,17 @@ void CheckGround()
     }
 }
 
+private void OnCollisionEnter(Collision other)
+{
+    Debug.Log(other.gameObject.name);
+    if (other.gameObject.tag == "Bomba")
+    {
+        muerto=true;
+        canMove=false;
+        audioSourcePasos.Stop();
+        animacionesPlayer.AnimacionMuerto();
+    }
+}
 
 void OnDrawGizmosSelected()
 {
